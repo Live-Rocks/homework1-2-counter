@@ -5,8 +5,19 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';     //�
 export default function App() {                                              //變數
   const [count, setCount] = useState(0)
 
-  const printOpacity = () => {                                               //log記錄檔
-    console.log('clicked TouchableOpacity!')
+  const printOpacity1 = () => {                                              //按鈕功能+log紀錄 
+    setCount(count + 1)
+    console.log('clicked TouchableOpacity!(+)')
+  }
+
+  const printOpacity2 = () => {
+    setCount(count - count)
+    console.log('clicked TouchableOpacity!(return  zero)')
+  }
+
+  const printOpacity3 = () => {
+    setCount(count - 1)
+    console.log('clicked TouchableOpacity!(-)')
   }
 
   return (
@@ -15,24 +26,21 @@ export default function App() {                                              //�
       <Text style={styles.maintext}>{count}</Text>
 
       <TouchableOpacity
-        onPress={() => printOpacity()}
-        onPress={() => setCount(count + 1)}
+        onPress={() => printOpacity1()}
         style={{ width: 100, height: 50, backgroundColor: 'lemonchiffon', justifyContent: 'center' }}>
         <Text style={styles.maintext1} >
           +
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => printOpacity()}
-        onPress={() => setCount(count - count)}
+        onPress={() => printOpacity2()}
         style={{ width: 100, height: 50, backgroundColor: 'lightskyblue', justifyContent: 'center' }}>
         <Text style={styles.maintext} >
           return  zero
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => printOpacity()}
-        onPress={() => setCount(count - 1)}
+        onPress={() => printOpacity3()}
         style={{ width: 100, height: 50, backgroundColor: 'lemonchiffon', justifyContent: 'center' }}>
         <Text style={styles.maintext1} >
           -
